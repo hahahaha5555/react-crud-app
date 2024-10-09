@@ -1,9 +1,10 @@
 //import React, { Component } from 'react'
 import React from 'react'
+import { MdSend } from 'react-icons/md'; // 추가된 import 문
 import './ExpenseForm.css';
 
 //export default class ExpenseForm extends Component {
-const ExpenseForm = ({ charge, handleCharge, amount, handleAmount, handleSubmit }) => {
+const ExpenseForm = ({ charge, handleCharge, amount, handleAmount, handleSubmit, edit }) => {
 //  render() {
     return (
       <form onSubmit={handleSubmit}>
@@ -34,7 +35,8 @@ const ExpenseForm = ({ charge, handleCharge, amount, handleAmount, handleSubmit 
             </div>
         </div>
         <button type='submit' className='btn'>
-            제출
+            {edit ? '수정': '제출'}
+            <MdSend className='btn-icon' />
         </button>
       </form>
     )
